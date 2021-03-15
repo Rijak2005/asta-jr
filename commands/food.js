@@ -31,10 +31,7 @@ module.exports = {
           break;
 
         default:
-          message.reply(
-            "That's not a valid food item ya dumbo :P Please type astajr help food if you need a refresher 😀"
-          );
-          message.channel.bulkDelete(2);
+          finalUrl = baseUrl;
           return;
           break;
       }
