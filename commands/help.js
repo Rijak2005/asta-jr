@@ -79,6 +79,15 @@ module.exports = {
                   name: "​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎",
                   value: "​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎",
                 },
+                {
+                  name: "Food 🍕",
+                  value:
+                    "Your go to command when you need some mouth-watering. Type 'astajr help food' for more details!",
+                },
+                {
+                  name: "​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎",
+                  value: "​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎",
+                },
               ],
               footer: {
                 text:
@@ -108,6 +117,35 @@ module.exports = {
                   value: "astajr link youtube",
                 },
               ],
+              color: 0xe556f5,
+            },
+          });
+          break;
+
+        case "food":
+          message.channel.send({
+            embed: {
+              title: "The Food Command 🍕",
+              description: `Use this command to get photos of delicious food items!`,
+              fields: [
+                {
+                  name: "Format for using the command",
+                  value: "astajr food [food item(optional)]",
+                },
+                {
+                  name: "​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎",
+                  value: "​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎ ​‎‎‎",
+                },
+                {
+                  name:
+                    "Writing a specific food item will give you image of that item but if you don't give a food item then I'll just make some random dish for you",
+                  value:
+                    "Possible food items are: Pizza, burger, idly, dosa, biryani",
+                },
+              ],
+              footer: {
+                text: "The preparation time of food is 2.5 seconds!",
+              },
               color: 0xe556f5,
             },
           });
