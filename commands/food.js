@@ -32,6 +32,7 @@ module.exports = {
 
         default:
           finalUrl = baseUrl;
+          args[0] = null;
           break;
       }
     }
