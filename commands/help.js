@@ -165,7 +165,7 @@ module.exports = {
 
         default:
           message.channel.send(
-            "Broo has your mind gone away? That command doesn't need any explaination !? just write it as it is with astajr in front"
+            "Broo has your mind gone away? Please check if you wrote a correct command. If it is, then that command doesn't need any explaination !? just write it as it is with astajr in front"
           );
           break;
       }
