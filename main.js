@@ -50,7 +50,8 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("message", (message) => {
   // console.log();
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
+    return;
 
   if (message.content.startsWith(prefix + "do you play ")) {
     var gameName = message.content.slice(prefix.length + 12).toLowerCase();
@@ -90,6 +91,10 @@ client.on("message", (message) => {
 
     case "help":
       client.commands.get("help").execute(message, args);
+      break;
+
+    case "food":
+      client.commands.get("food").execute(message, args);
       break;
 
     default:
