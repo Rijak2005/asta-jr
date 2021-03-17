@@ -144,7 +144,7 @@ module.exports = {
                 },
               ],
               footer: {
-                text: "The preparation time of food is 2.5 seconds!",
+                text: "The preparation time of food is 3 seconds!",
               },
               color: 0xe556f5,
             },
