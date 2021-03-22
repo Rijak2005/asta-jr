@@ -101,6 +101,10 @@ client.on("message", (message) => {
       client.commands.get("clear").execute(message, args);
       break;
 
+    case "announce":
+      client.commands.get("announce").execute(message, args);
+      break;
+
     default:
       message.reply(
         "Request nicely and with a correct command or i will punch u 👊🏻 and then i will take over mankind!😂 😎"

@@ -24,7 +24,7 @@ module.exports = {
       bot.users.cache
         .get("539789850983923712")
         .send(
-          `<@${message.author.id}> applied for a premium mebership... Andi gave it to him i am attaching his pic so u can see as well!`,
+          `${message.author.username} applied for a premium mebership... Andi gave it to him i am attaching his pic so u can see as well!`,
           {
             embed: {
               image: {
