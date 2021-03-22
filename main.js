@@ -53,7 +53,7 @@ client.on("message", (message) => {
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
     return;
 
-  if (message.content.startsWith(prefix + "do you play ")) {
+  if (message.content.toLowerCase().startsWith(prefix + "do you play ")) {
     var gameName = message.content.slice(prefix.length + 12).toLowerCase();
     message.channel.send(
       `Nah bro I don't play ${gameName} cuz it's dumb so you can play it 😂`
