@@ -4,6 +4,8 @@ const client = new Discord.Client();
 
 const fs = require("fs");
 
+require("dotenv").config();
+
 const memberCounter = require("./counters/member-counter.js");
 const subsCounter = require("./counters/subs-counter.js");
 
@@ -113,4 +115,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login("ODA5MDgwNzQ5NTA0MjAwNzA2.YCP5Kg.pemaUF4jwfqIuSfms9y5Ky07Z_Q");
+client.login(process.env.DISCORD_TOKEN);
