@@ -3,7 +3,7 @@ require("dotenv").config();
 module.exports = async (client) => {
   //  This is Id pls replace in new server
   const guild = client.guilds.cache.get("814869735300268082");
-  const youtubeKey = process.env.API_KEY;
+  const youtubeKey = "AIzaSyDCvtrWr-Jm-e-vdCWSxEH-vXOIhCttVvY";
   const youtubeUser = "UCKw6xQOZZQmkHmwTQ1sSHcA";
   var subsCount = 0;
   setInterval(() => {
