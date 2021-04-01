@@ -115,4 +115,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login(ODA5MDgwNzQ5NTA0MjAwNzA2.YCP5Kg.hi4GscI8sCpokOVwU7aYvvp_36o);
+client.login("ODA5MDgwNzQ5NTA0MjAwNzA2.YCP5Kg.hi4GscI8sCpokOVwU7aYvvp_36o");
