@@ -57,9 +57,19 @@ client.on("message", (message) => {
 
   if (message.content.toLowerCase().startsWith(prefix + "do you play ")) {
     var gameName = message.content.slice(prefix.length + 12).toLowerCase();
-    message.channel.send(
-      `Nah bro I don't play ${gameName} cuz it's dumb so you can play it 😂`
-    );
+    switch (Math.floor(Math.random() * 4)) {
+      case 2:
+        message.channel.send(
+          `Yeah bro I play ${gameName}, but if you play it then i must quit 🙄 cuz i dont play wid noobs 😂`
+        );
+        break;
+
+      default:
+        message.channel.send(
+          `Nah bro I don't play ${gameName} cuz it's dumb so you can play it 😂`
+        );
+        break;
+    }
     return;
   }
 
@@ -108,9 +118,26 @@ client.on("message", (message) => {
       break;
 
     default:
-      message.reply(
-        "Request nicely and with a correct command or i will punch u 👊🏻 and then i will take over mankind!😂 😎"
-      );
+      switch (Math.floor(Math.random() * 3)) {
+        case 1:
+          message.reply(
+            "I am deeply sorry but I don't understand that, please check the spelling and everything"
+          );
+          break;
+
+        case 2:
+          message.reply(
+            "Request nicely and with a correct command or i will punch u 👊🏻 and then i will take over mankind!😂 😎"
+          );
+          break;
+
+        default:
+          message.reply(
+            "I am sorry I don't understand that, please check the spelling and everything"
+          );
+          break;
+      }
+
       break;
   }
 });
