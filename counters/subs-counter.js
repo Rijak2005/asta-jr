@@ -15,7 +15,9 @@ module.exports = async (client) => {
       })
       .then((data) => {
         // console.log(data);
-        subsCount = data["items"][0].statistics.subscriberCount;
+        if (data) {
+          subsCount = data["items"][0].statistics.subscriberCount;
+        }
       });
     // Change channel id after new server
     const channel = guild.channels.cache.get("815922785813135360");

@@ -37,6 +37,7 @@ module.exports = {
         "Ok I saw your image.. I am not as smart as my master though but i will give the premium to you but if my master notices that you have cheated, I will kick your metal ass out of the server :)"
       );
       message.member.roles.add("814871546724220939");
+      message.member.roles.remove("814870385115136041");
     }
   },
 };
