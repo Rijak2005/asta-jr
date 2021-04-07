@@ -138,15 +138,20 @@ module.exports = {
                 },
                 {
                   name:
-                    "Writing a specific food item will give you image of that item but if you don't give a food item then I'll just make some random dish for you",
+                    "Writing a specific food item will give you image of that item but if you don't give a food item (or a wrong one) then I'll just make some random dish for you",
                   value:
-                    "Possible food items are: Pizza, burger, idly, dosa, biryani",
+                    "Possible food items are given in the menu below! PLEASE USE THE EXACT SPELLING!",
                 },
               ],
               footer: {
                 text: "The preparation time of food is 3 seconds!",
               },
               color: 0xe556f5,
+              files : [
+                {
+                  attachment: "./assets/menu.png"
+                }
+              ]
             },
           });
           break;
