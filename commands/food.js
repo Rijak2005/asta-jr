@@ -46,6 +46,10 @@ module.exports = {
           finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
           break;
 
+        case "pasta":
+          finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
+          break;
+
         default:
           finalUrl = baseUrl;
           args[0] = null;
