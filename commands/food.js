@@ -30,6 +30,22 @@ module.exports = {
           finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
           break;
 
+        case "butter-chicken":
+          finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
+          break;
+
+        case "dessert":
+          finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
+          break;
+
+        case "samosa":
+          finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
+          break;
+
+        case "rice":
+          finalUrl = `${baseUrl}images/${args[0].toLowerCase()}`;
+          break;
+
         default:
           finalUrl = baseUrl;
           args[0] = null;
