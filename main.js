@@ -117,6 +117,10 @@ client.on("message", (message) => {
       client.commands.get("announce").execute(message, args);
       break;
 
+    case "emptyrole":
+      client.commands.get("emptyrole").execute(message, args);
+      break;
+
     default:
       switch (Math.floor(Math.random() * 3)) {
         case 1:

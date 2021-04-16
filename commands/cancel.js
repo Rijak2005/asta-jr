@@ -14,7 +14,7 @@ module.exports = {
     user.roles.add("814870385115136041");
     user.roles.remove("814871546724220939");
     message.channel.send(
-      `${user} who do you think you are? my master saw your metal bot ass cheating so I have removed you from premium and if you fool me again I will kick you out of this server understood!?`
+      `${user} who do you think you are? my master saw you cheating so I have removed you from premium and if you fool me again I will kick you out of this server understood!?`
     );
     message.delete();
   },
