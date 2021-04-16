@@ -35,9 +35,9 @@ client.on("guildMemberAdd", (member) => {
   client.channels.fetch("814895688735391754").then((channel) => {
     channel.send({
       embed: {
-        title: `Welcome to the server ${member}.`,
+        title: `Welcome to the server ${member.user.username}.`,
         thumbnail: {
-          url: member.user.avatarURL(),
+          url: member.user.avatarURL() ? member.user.avatarURL() : member.user.defaultAvatarURL,
         },
         description: `I am Astatine Jr. the assistant of the professor and you are the most shameful person if you haven't subscribed to the yt channel yet just sayin... \n Make sure to check out <#814869735300268085> & <#814869735300268084> to understand the server better! \n Enjoy your time here!`,
         footer: {
