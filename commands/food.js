@@ -63,12 +63,13 @@ module.exports = {
       })
       .then((data) => {
         imgUrl = data.image;
-        console.log(imgUrl);
       });
 
     setTimeout(() => {
       var foodMessage = args[0]
-        ? `One delicious ${args[0].toLowerCase()} for <@${message.author.id}> Here you go!`
+        ? `One delicious ${args[0].toLowerCase()} for <@${
+            message.author.id
+          }> Here you go!`
         : `Food coming up for <@${message.author.id}>!`;
       message.channel.send(foodMessage, {
         embed: {

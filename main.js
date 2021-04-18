@@ -37,7 +37,9 @@ client.on("guildMemberAdd", (member) => {
       embed: {
         title: `Welcome to the server ${member.user.username}.`,
         thumbnail: {
-          url: member.user.avatarURL() ? member.user.avatarURL() : member.user.defaultAvatarURL,
+          url: member.user.avatarURL()
+            ? member.user.avatarURL()
+            : member.user.defaultAvatarURL,
         },
         description: `I am Astatine Jr. the assistant of the professor and you are the most shameful person if you haven't subscribed to the yt channel yet just sayin... \n Make sure to check out <#814869735300268085> & <#814869735300268084> to understand the server better! \n Enjoy your time here!`,
         footer: {
@@ -51,6 +53,20 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on("message", (message) => {
+  if (
+    message.mentions.members.first().id === "539789850983923712" &&
+    message.author.bot === false
+  ) {
+    message.guild.members.fetch("539789850983923712").then((asta) => {
+      if (asta.presence.status === "offline") {
+        message.reply(
+          "Look dude ik you are a very big fan of astatine but he is not available rn so chill out and wait for him 😉"
+        );
+      } else {
+        return;
+      }
+    });
+  }
   // console.log();
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
     return;
