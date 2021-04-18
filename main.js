@@ -53,7 +53,7 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on("message", (message) => {
-  if (message.mentions) {
+  if (message.mentions.members.first()) {
     if (
       message.mentions.members.first().id === "539789850983923712" &&
       message.author.bot === false
