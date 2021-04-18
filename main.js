@@ -53,20 +53,21 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on("message", (message) => {
-  if (
-    message.mentions &&
-    message.mentions.members.first().id === "539789850983923712" &&
-    message.author.bot === false
-  ) {
-    message.guild.members.fetch("539789850983923712").then((asta) => {
-      if (asta.presence.status === "offline") {
-        message.reply(
-          "Look dude ik you are a very big fan of astatine but he is not available rn so chill out and wait for him 😉"
-        );
-      } else {
-        return;
-      }
-    });
+  if (message.mentions) {
+    if (
+      message.mentions.members.first().id === "539789850983923712" &&
+      message.author.bot === false
+    ) {
+      message.guild.members.fetch("539789850983923712").then((asta) => {
+        if (asta.presence.status === "offline") {
+          message.reply(
+            "Look dude ik you are a very big fan of astatine but he is not available rn so chill out and wait for him 😉"
+          );
+        } else {
+          return;
+        }
+      });
+    }
   }
   // console.log();
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
