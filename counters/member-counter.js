@@ -17,17 +17,13 @@ module.exports = async (client) => {
         }
       });
     }
-    if (tPeople !== people) {
-      people = tPeople;
-      tPeople = 0;
-    }
-    if (tBots !== bots) {
-      bots = tBots;
-      tBots = 0;
-    }
+    people = tPeople;
+    tPeople = 0;
+    bots = tBots;
+    tBots = 0;
     const peepChannel = guild.channels.cache.get("815922102375940117");
     peepChannel.setName(`Peeps in Server 👦🏻: ${people.toLocaleString()}`);
     const botChannel = guild.channels.cache.get("840500872558542848");
     botChannel.setName(`Bots in Server 🤖: ${bots.toLocaleString()}`);
-  }, 6000);
+  }, 10000);
 };
