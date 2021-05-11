@@ -22,5 +22,5 @@ module.exports = async (client) => {
     // Change channel id after new server
     const channel = guild.channels.cache.get("815922785813135360");
     channel.setName(`YouTube Subs 📺: ${subsCount.toLocaleString()}`);
-  }, 8500);
+  }, 90000);
 };
