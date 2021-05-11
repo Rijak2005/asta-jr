@@ -53,22 +53,6 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on("message", (message) => {
-  if (message.mentions.members.first()) {
-    if (
-      message.mentions.members.first().id === "539789850983923712" &&
-      message.author.bot === false
-    ) {
-      message.guild.members.fetch("539789850983923712").then((asta) => {
-        if (asta.presence.status === "offline") {
-          message.reply(
-            "Look dude ik you are a very big fan of astatine but he is not available rn so chill out and wait for him 😉"
-          );
-        } else {
-          return;
-        }
-      });
-    }
-  }
   // console.log();
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
     return;
@@ -137,6 +121,10 @@ client.on("message", (message) => {
 
     case "emptyrole":
       client.commands.get("emptyrole").execute(message, args);
+      break;
+
+    case "premium":
+      client.commands.get("premium").execute(message, args, client);
       break;
 
     default:
