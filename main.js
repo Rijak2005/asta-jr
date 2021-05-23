@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 
 const fs = require("fs");
 
@@ -125,6 +125,10 @@ client.on("message", (message) => {
 
     case "premium":
       client.commands.get("premium").execute(message, args, client);
+      break;
+
+    case "opentickets":
+      client.commands.get("opentickets").execute(message, args, Discord, client);
       break;
 
     default:
