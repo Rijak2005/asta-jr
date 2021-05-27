@@ -5,19 +5,20 @@ module.exports = {
         const channel = '828891794585550869';
         const triviaNighter = message.guild.roles.cache.find(role => role.id === "833250151057457162");
         const tourneyParticipant = message.guild.roles.cache.find(role => role.id === "832581957833326684");
+        const skribblParticipant = message.guild.roles.cache.find(role => role.id === "846657930756882433");
         const emoji = '🎫';
         var count = 0;
         if(!args[0]){
             message.channel.send("No event specified")
             return;
         }
-        if (args[0]!="trivia"&&args[0]!="tournament") {
+        if (args[0]!="trivia"&&args[0]!="tournament"&&args[0]!="skribbl") {
             message.channel.send("Invalid event!")
             return;
         }
         let embed = new Discord.MessageEmbed()
-            .setColor(args[0]==="trivia"?'#fe019a':'00BAF1')
-            .setTitle(args[0]==="trivia"?`Hey guys! Giving tickets for today's trivia night!`: "Hey guys! Giving tickets for today's tournament!")
+            .setColor(args[0]==="trivia"?'#fe019a': args[0]==="skribbl"?'#39FF14':'#00BAF1')
+            .setTitle(args[0]==="trivia"?`Hey guys! Giving tickets for today's trivia night!`: args[0]==="skribbl"?"Hey guys! Giving tickets for today's Skribbl.io Mania!":"Hey guys! Giving tickets for today's tournament")
             .setDescription(`To get a ticket tap on the ticket below and then type:
             pls give 600 @Mr.Astatine
             
@@ -41,6 +42,8 @@ module.exports = {
                         await reaction.message.guild.members.cache.get(user.id).roles.add(triviaNighter);
                     } else if (args[0]==="tournament"){
                         await reaction.message.guild.members.cache.get(user.id).roles.add(tourneyParticipant);
+                    } else if(args[0]==="skribbl"){
+                        await reaction.message.guild.members.cache.get(user.id).roles.add(skribblParticipant);
                     }
                     count++
                 } else {
@@ -48,7 +51,7 @@ module.exports = {
                 }
             } else{
                 reaction.users.remove(user.id);
-                client.users.cache.get(user.id).send("Broo You cant enter the event cuz 25 people have entered before you");
+                client.users.cache.get(user.id).send("Broo You cant enter the event cuz 25 people have entered before you\nAnd the max limit is 25!\nBe fast next time!");
             }
  
         });
@@ -67,6 +70,9 @@ module.exports = {
                 }
                 if (args[0]==="tournament") {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(tourneyParticipant);
+                } 
+                if(args[0]==="skribbl"){
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(skribblParticipant);
                 }
                 count--;
             } else {

@@ -6,8 +6,8 @@ module.exports = async (client) => {
   const youtubeKey = "AIzaSyDCvtrWr-Jm-e-vdCWSxEH-vXOIhCttVvY";
   const youtubeUser = "UCKw6xQOZZQmkHmwTQ1sSHcA";
   var subsCount = 0;
-  setInterval(() => {
-    fetch(
+  setInterval(async () => {
+    await fetch(
       `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${youtubeUser}&key=${youtubeKey}`
     )
       .then((response) => {
