@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
+const client = new Discord.Client({
+  partials: ["MESSAGE", "CHANNEL", "REACTION"],
+});
 
 const fs = require("fs");
 
@@ -43,8 +45,7 @@ client.on("guildMemberAdd", (member) => {
         },
         description: `I am Astatine Jr. the assistant of the professor and you are the most shameful person if you haven't subscribed to the yt channel yet just sayin... \n Make sure to check out <#814869735300268085> & <#814869735300268084> to understand the server better! \n Enjoy your time here!`,
         footer: {
-          text:
-            "P.S. I can get a little toxic sometimes and I am sorry if I say something bad to you so don't mind and remember that I am a bot.",
+          text: "P.S. I can get a little toxic sometimes and I am sorry if I say something bad to you so don't mind and remember that I am a bot.",
         },
         color: 0x2ac7b1,
       },
@@ -128,7 +129,13 @@ client.on("message", (message) => {
       break;
 
     case "opentickets":
-      client.commands.get("opentickets").execute(message, args, Discord, client);
+      client.commands
+        .get("opentickets")
+        .execute(message, args, Discord, client);
+      break;
+
+    case "joke":
+      client.commands.get("joke").execute(message, args);
       break;
 
     default:

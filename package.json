@@ -9,8 +9,10 @@
   "author": "Rijak Singh",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.5.0",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
+    "ffmpeg-static": "^4.3.0",
     "node-fetch": "^2.6.1",
     "random": "^3.0.5"
   }
