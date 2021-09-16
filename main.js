@@ -138,6 +138,18 @@ client.on("message", (message) => {
       client.commands.get("joke").execute(message, args);
       break;
 
+    case "topic":
+      client.commands.get("topic").execute(message, args);
+      break;
+
+    case "suggest":
+      client.commands.get("suggest").execute(message, args, client);
+      break;
+
+    case "staff-application":
+      client.commands.get("staff").execute(message, args);
+      break;
+
     default:
       switch (Math.floor(Math.random() * 3)) {
         case 1:

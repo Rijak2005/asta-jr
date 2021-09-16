@@ -4,7 +4,7 @@ module.exports = {
   name: "joke",
   decription: "Joke command",
   execute(message, args) {
-    let randomNum = random.int((min = 1), (max = 4));
+    let randomNum = random.int((min = 1), (max = 10));
     //1. Join the channel!
     let vc = message.member.voice.channel;
     if (vc) {

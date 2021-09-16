@@ -27,10 +27,10 @@ module.exports = {
     //2. Start 2 minutes after 10 seconds
     setTimeout(async () => {
       message.reply(
-        "Let's hope you got your things! you have 30 seconds to type this into the chat: `pls give 32609 @mr.astatine`"
+        "Let's hope you got your things! you have 30 seconds to type this into the chat: `pls give 30928 @mr.astatine`"
       );
       await message.channel
-        .awaitMessages(filter, { max: 2, time: 33000 })
+        .awaitMessages(filter, { max: 2, time: 43000 })
         .then(async (collected) => {
           for (var mes of collected.toJSON()) {
             console.log(mes);
