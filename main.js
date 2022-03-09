@@ -6,6 +6,12 @@ const client = new Discord.Client({
 
 const fs = require("fs");
 
+const dbURI =
+  "mongodb+srv://astatine:Astajrzindabad1234@astajr-data.fivyi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+const mongoose = require("mongoose");
+const User = require("./models/user");
+
 require("dotenv").config();
 
 const memberCounter = require("./counters/member-counter.js");
@@ -32,7 +38,7 @@ client.on("ready", () => {
   subsCounter(client);
 });
 
-client.on("guildMemberAdd", (member) => {
+client.on("guildMemberAdd", async (member) => {
   member.roles.add("814870385115136041");
   client.channels.fetch("814895688735391754").then((channel) => {
     channel.send({
@@ -50,6 +56,11 @@ client.on("guildMemberAdd", (member) => {
         color: 0x2ac7b1,
       },
     });
+  });
+  //create astajr account
+  const response = await User.create({
+    discordId: member.user.id,
+    discordUser: member.user.tag,
   });
 });
 
@@ -102,6 +113,14 @@ client.on("message", (message) => {
 
     case "cancel":
       client.commands.get("cancel").execute(message, args);
+      break;
+
+    case "balance":
+      client.commands.get("balance").execute(message, args, User);
+      break;
+
+    case "give":
+      client.commands.get("give").execute(message, args, User);
       break;
 
     case "help":
@@ -174,5 +193,9 @@ client.on("message", (message) => {
       break;
   }
 });
+mongoose
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((res) => console.log("connected to db"))
+  .catch((err) => console.log("Error"));
 
 client.login("ODA5MDgwNzQ5NTA0MjAwNzA2.YCP5Kg.hi4GscI8sCpokOVwU7aYvvp_36o");

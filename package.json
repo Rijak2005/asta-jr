@@ -13,6 +13,7 @@
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
+    "mongoose": "^6.2.4",
     "node-fetch": "^2.6.1",
     "random": "^3.0.5"
   }
