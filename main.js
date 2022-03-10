@@ -63,7 +63,13 @@ client.on("guildMemberAdd", async (member) => {
     discordUser: member.user.tag,
   });
 });
-
+client.on("guildMemberRemove", async (member) => {
+  //delete astajr account
+  const res = await User.deleteOne({
+    discordId: member.id,
+    discordUser: member.user.tag,
+  });
+});
 client.on("message", (message) => {
   // console.log();
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
@@ -119,8 +125,16 @@ client.on("message", (message) => {
       client.commands.get("balance").execute(message, args, User);
       break;
 
+    case "create":
+      client.commands.get("create").execute(message, args, User);
+      break;
+
     case "give":
       client.commands.get("give").execute(message, args, User);
+      break;
+
+    case "leaderboard":
+      client.commands.get("leaderboard").execute(message, args, User);
       break;
 
     case "help":
