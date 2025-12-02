@@ -1,6 +1,6 @@
 # 🤖 Asta Jr. - Discord Bot
 
-A feature-rich Discord. js bot designed to manage and enhance **Professor Astatine's class Discord server**. Built with personality, Astatine Jr. combines server management tools, entertainment features, and gamification to create an engaging community experience.
+A feature-rich Discord. js bot designed to manage and enhance **Professor Astatine's class Discord server** (The discord server for my old youtube channel community 😃). Built with personality, Astatine Jr. combines server management tools, entertainment features, and gamification to create an engaging community experience.
 
 ---
 
